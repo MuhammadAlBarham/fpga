@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/Assignment_2/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 Low_Priority_Encoder_16_to_4.ngc Low_Priority_Encoder_16_to_4.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o Low_Priority_Encoder_16_to_4_map.ncd Low_Priority_Encoder_16_to_4.ngd Low_Priority_Encoder_16_to_4.pcf 
+par -w -intstyle ise -ol high -t 1 Low_Priority_Encoder_16_to_4_map.ncd Low_Priority_Encoder_16_to_4.ncd Low_Priority_Encoder_16_to_4.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml Low_Priority_Encoder_16_to_4.twx Low_Priority_Encoder_16_to_4.ncd -o Low_Priority_Encoder_16_to_4.twr Low_Priority_Encoder_16_to_4.pcf 
+xst -intstyle ise -ifn "D:/New folder/1. Summer Semester/1. FPGA/1. Lectures/4. Chapter_3/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.xst" -ofn "D:/New folder/1. Summer Semester/1. FPGA/1. Lectures/4. Chapter_3/Assignment_3/Test_1/Low_Priority_Encoder_16_to_4.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.syr" 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim Low_Priority_Encoder_16_to_4.ngc Low_Priority_Encoder_16_to_4_synthesis.v 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.xst" -ofn "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/Low_Priority_Encoder_16_to_4.syr" 

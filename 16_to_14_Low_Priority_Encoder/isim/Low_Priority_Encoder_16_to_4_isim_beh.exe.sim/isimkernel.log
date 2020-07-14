@@ -1,0 +1,28 @@
+Command line:
+   Low_Priority_Encoder_16_to_4_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50439
+
+Tue Jul 14 17:54:41 2020
+
+
+ Elaboration Time: 0.09375 sec
+
+ Current Memory Usage: 4702.53 Meg
+
+ Total Signals          : 15
+ Total Nets             : 34
+ Total Signal Drivers   : 7
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 19
+ Total Scalar Nets and Variables : 118
+
+ Total Simulation Time: 0.109375 sec
+
+ Current Memory Usage: 4702.53 Meg
+
+Tue Jul 14 17:54:45 2020
+

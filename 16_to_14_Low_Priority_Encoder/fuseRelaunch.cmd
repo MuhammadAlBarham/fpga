@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/LPE_16_to_4_isim_beh.exe" -prj "C:/Users/Phantom/Desktop/16_to_14_Low_Priority_Encoder/LPE_16_to_4_beh.prj" "work.LPE_16_to_4" "work.glbl" 

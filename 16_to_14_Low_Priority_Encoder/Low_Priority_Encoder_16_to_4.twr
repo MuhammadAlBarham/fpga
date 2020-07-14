@@ -1,0 +1,141 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml Low_Priority_Encoder_16_to_4.twx
+Low_Priority_Encoder_16_to_4.ncd -o Low_Priority_Encoder_16_to_4.twr
+Low_Priority_Encoder_16_to_4.pcf
+
+Design file:              Low_Priority_Encoder_16_to_4.ncd
+Physical constraint file: Low_Priority_Encoder_16_to_4.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+W<0>           |f              |    8.545|
+W<0>           |y<0>           |    6.986|
+W<0>           |y<1>           |    6.970|
+W<0>           |y<2>           |    8.161|
+W<0>           |y<3>           |    8.156|
+W<1>           |f              |    8.258|
+W<1>           |y<0>           |    6.822|
+W<1>           |y<1>           |    6.973|
+W<1>           |y<2>           |    7.870|
+W<1>           |y<3>           |    7.865|
+W<2>           |f              |    8.812|
+W<2>           |y<0>           |    7.572|
+W<2>           |y<1>           |    6.848|
+W<2>           |y<2>           |    8.565|
+W<2>           |y<3>           |    8.560|
+W<3>           |f              |    8.146|
+W<3>           |y<0>           |    7.928|
+W<3>           |y<1>           |    7.345|
+W<3>           |y<2>           |    7.749|
+W<3>           |y<3>           |    7.744|
+W<4>           |f              |    8.303|
+W<4>           |y<0>           |    7.776|
+W<4>           |y<1>           |    7.713|
+W<4>           |y<2>           |    7.778|
+W<4>           |y<3>           |    7.888|
+W<5>           |f              |    8.151|
+W<5>           |y<0>           |    7.781|
+W<5>           |y<1>           |    8.084|
+W<5>           |y<2>           |    7.627|
+W<5>           |y<3>           |    7.557|
+W<6>           |f              |    7.859|
+W<6>           |y<0>           |    8.645|
+W<6>           |y<1>           |    9.033|
+W<6>           |y<2>           |    7.380|
+W<6>           |y<3>           |    7.632|
+W<7>           |f              |    8.552|
+W<7>           |y<0>           |    8.209|
+W<7>           |y<1>           |    9.302|
+W<7>           |y<2>           |    7.087|
+W<7>           |y<3>           |    7.836|
+W<8>           |f              |    7.735|
+W<8>           |y<0>           |    8.443|
+W<8>           |y<1>           |    8.831|
+W<8>           |y<2>           |    7.781|
+W<8>           |y<3>           |    6.637|
+W<9>           |f              |    7.904|
+W<9>           |y<0>           |    9.270|
+W<9>           |y<1>           |    9.658|
+W<9>           |y<2>           |    7.649|
+W<9>           |y<3>           |    6.657|
+W<10>          |f              |    7.171|
+W<10>          |y<0>           |    9.362|
+W<10>          |y<1>           |    9.750|
+W<10>          |y<2>           |    7.584|
+W<10>          |y<3>           |    7.058|
+W<11>          |f              |    8.231|
+W<11>          |y<0>           |    9.534|
+W<11>          |y<1>           |   10.300|
+W<11>          |y<2>           |    7.923|
+W<11>          |y<3>           |    8.118|
+W<12>          |f              |    8.084|
+W<12>          |y<0>           |   10.608|
+W<12>          |y<1>           |   10.825|
+W<12>          |y<2>           |    7.613|
+W<12>          |y<3>           |    7.971|
+W<13>          |f              |    7.333|
+W<13>          |y<0>           |   10.706|
+W<13>          |y<1>           |   10.992|
+W<13>          |y<2>           |    7.838|
+W<13>          |y<3>           |    7.220|
+W<14>          |f              |    8.156|
+W<14>          |y<0>           |   10.885|
+W<14>          |y<1>           |   11.291|
+W<14>          |y<2>           |    8.072|
+W<14>          |y<3>           |    7.474|
+W<15>          |f              |    8.210|
+W<15>          |y<0>           |   10.822|
+W<15>          |y<1>           |   10.961|
+W<15>          |y<2>           |    7.780|
+W<15>          |y<3>           |    7.144|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Jul 13 14:16:16 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4505 MB
+
+
+

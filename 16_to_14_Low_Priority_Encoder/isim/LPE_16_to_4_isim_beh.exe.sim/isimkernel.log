@@ -1,0 +1,28 @@
+Command line:
+   LPE_16_to_4_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50450
+
+Tue Jul 14 17:55:01 2020
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 4703.08 Meg
+
+ Total Signals          : 17
+ Total Nets             : 34
+ Total Signal Drivers   : 8
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 12
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 134
+
+ Total Simulation Time: 0.09375 sec
+
+ Current Memory Usage: 4703.09 Meg
+
+Tue Jul 14 17:55:15 2020
+
