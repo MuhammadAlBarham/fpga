@@ -1,7 +1,0 @@
-
-# PlanAhead Generated physical constraints 
-
-NET "a" LOC = L13;
-NET "b" LOC = L14;
-NET "c" LOC = F12;
-NET "s" LOC = E12;
