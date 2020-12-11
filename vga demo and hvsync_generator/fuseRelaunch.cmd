@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Phantom/Desktop/Ch_8/Test_ch_8/test_vga_2_isim_beh.exe" -prj "C:/Users/Phantom/Desktop/Ch_8/Test_ch_8/test_vga_2_beh.prj" "work.test_vga_2" "work.glbl" 
