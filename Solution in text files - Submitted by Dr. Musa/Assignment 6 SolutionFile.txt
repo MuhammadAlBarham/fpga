@@ -1,0 +1,46 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:44:42 07/28/2020 
+// Design Name: 
+// Module Name:    test 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module lrshift_tf();
+
+reg Si1, L1, R1;
+reg [7:0] In1;
+wire [7:0] Out1;
+// instantiate unit under test
+lrshift uut (Si1, L1, R1, In1, Out1);
+// apply inputs one at a time and check results
+initial 
+begin
+ In1=8'b00100100; Si1=1'b0; L1=1'b0; R1=1'b1 ; #10; // 1 shift to the right
+ if (Out1 != 8'b00010010) $display("1 failed");
+ In1=8'b00100100; Si1=1'b0; L1=1'b1; R1=1'b0 ; #10; // 2 shift to the left
+ if (Out1 !== 8'b11001000) $display("2 failed"); // it's not correct
+ In1=8'b00100100; Si1=1'b1; L1=1'b0; R1=1'b1 ; #10; // 3 shift to the right
+ if (Out1 !== 8'b10010010) $display("3 failed.");
+ In1=8'b00100100; Si1=1'b1; L1=1'b1; R1=1'b0 ; #10; // 4 shift to the left
+ if (Out1 !== 8'b01001001) $display("4 failed.");
+  In1=8'b00100100; Si1=1'b1; L1=1'b0; R1=1'b0 ; #10; // 5  no shift
+ if (Out1 !== 8'b00100100) $display("5 failed.");
+  In1=8'b00100100; Si1=1'b0; L1=1'b0; R1=1'b0 ; #10; // 6 no shift 
+ if (Out1 !== 8'b00100100) $display("6 failed.");
+end
+endmodule

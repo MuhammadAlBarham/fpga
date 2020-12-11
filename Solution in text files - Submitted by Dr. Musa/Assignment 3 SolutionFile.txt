@@ -1,0 +1,48 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:58:31 07/09/2020 
+// Design Name: 
+// Module Name:    encoder16x4 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module encoder16x4(
+    input [15:0] I,
+    output reg [3:0] O,
+    output f
+    );
+    assign f=(I!=0);
+	 always @(I)
+	   begin 
+		  casex(I)
+          'bxxxxxxxxxxxxxxx1: O=0;
+          'bxxxxxxxxxxxxxx10: O=1;  			 
+		    'bxxxxxxxxxxxxx100: O=2; 
+          'bxxxxxxxxxxxx1000: O=3;
+          'bxxxxxxxxxxx10000: O=4;
+          'bxxxxxxxxxx100000: O=5;
+          'bxxxxxxxxx1000000: O=6; 
+          'bxxxxxxxx10000000: O=7;
+          'bxxxxxxx100000000: O=8;
+ 			 'bxxxxxx1000000000: O=9;
+			 'bxxxxx10000000000: O=10;
+			 'bxxxx100000000000: O=11;
+			 'bxxx1000000000000: O=12;
+			 'bxx10000000000000: O=13;
+			 'bx100000000000000: O=14;
+			 default: O=15;
+			endcase 
+       end 			
+endmodule

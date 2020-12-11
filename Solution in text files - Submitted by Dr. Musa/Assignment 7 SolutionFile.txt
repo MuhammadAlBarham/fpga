@@ -1,0 +1,51 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:44:42 07/29/2020 
+// Design Name: 
+// Module Name:    testRam
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+ module sram_test; 
+// Inputs 
+reg [9:0] addr; 
+reg oe_n; 
+reg we_n; 
+// Bidirs 
+wire [7:0] data; 
+// Instantiate the Unit Under Test (UUT) 
+sram_model uut ( 
+.addr(addr), 
+.data(data), 
+.oe_n(oe_n), 
+.we_n(we_n) 
+); 
+initial begin 
+// Initialize Inputs 
+addr = 0; 
+oe_n = 0; 
+we_n = 0; 
+// Wait 100 ns for global reset to finish 
+#100; 
+// Add stimulus here 
+we_n=0; #20 
+$display ("sram failed") 
+we_n=1; oe_n=1; #20 
+$display ("sram failed") 
+we_n=1; oe_n=0; #20 
+if (data!==sram[addr]) $display ("sram failed") 
+end 
+endmodule 

@@ -1,0 +1,28 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:44:42 07/09/2020 
+// Design Name: 
+// Module Name:    adder8 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module adder8(
+    input [7:0] A,
+    input [7:0] B,
+    output [7:0] Sum,
+    output Carry
+    );
+    assign {Carry, Sum[7:0]}=A[7:0]+B[7:0];
+endmodule

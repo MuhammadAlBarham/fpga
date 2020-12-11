@@ -1,0 +1,66 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    20:44:42 07/22/2020 
+// Design Name: 
+// Module Name:    adder8 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module    gcd(x,y,go,clock,done,a);
+
+parameter   width=4;
+output reg [width-1:0]a;
+output reg  done;
+input      [width-1:0]x;
+input      [width-1:0]y;
+input       go,clock;
+
+parameter s_idle=2'b00,
+          s_comp=2'b01,
+			 s_done=2'b10;
+reg [1:0] state,nextstate;
+reg [width-1:0] b;
+reg a1,a2,a3;
+
+always @(posedge clock) // always block to update state
+ state <= nextstate; 
+
+always @(state ,go,a,b)
+begin
+ nextstate=s_idle;
+ a1=0;a2=0;a3=0;
+ case (state)
+   s_idle : begin if (go) nextstate=s_comp ; a1=1 ;end
+	s_comp : begin if (a==b) nextstate=s_done ; 
+                  else if (a > b) begin nextstate=s_comp; a2=1;end
+		else begin nextstate = s_comp; a3=1 ;end
+		end
+	s_done : begin  nextstate=s_idle ; done=1 ;end
+	default: nextstate=s_idle;
+ endcase
+end 
+
+always @(posedge clock) 
+begin
+ if(a1) begin
+        a<=x;
+        b<=y;
+  end
+ if(a2) a<=a-b;
+ if(a3) b<=b-a;
+ end
+endmodule
