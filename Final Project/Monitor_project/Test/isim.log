@@ -1,0 +1,28 @@
+ISim log file
+Running: C:\Users\Phantom\Desktop\Final_Game\Mointor_test_with_Zeina\Test\Monitor_test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/Monitor_test_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+                  20 : Right 1 
+                  35 : Left 1 
+                  50 : Left 2 
+                  65 : Right 2 
+                  80 : Right 3 
+                  95 : Left 3 
+                 110 : Right 4 
+                 125 : Left 4 
+                 140 : Right 5
+                 160 : Right 6 
+                 183 : Right 7
+                 206 : Right 8
+                 229 : Right 9
+                 244 : Left 5 
+                 259 : Left 6 
+                 274 : Left 7 
+                 289 : Left 8 
+Stopped at time : 1 us : File "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/Monitor_test.v" Line 226

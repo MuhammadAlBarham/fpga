@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/Monitor_test_isim_beh.exe" -prj "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/Monitor_test_beh.prj" "work.Monitor_test" "work.glbl" 

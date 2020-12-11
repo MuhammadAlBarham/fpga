@@ -1,0 +1,3 @@
+verilog work "Rotary_Filter.v"
+verilog work "rotary_direction.v"
+verilog work "monitor_color_generator.v"

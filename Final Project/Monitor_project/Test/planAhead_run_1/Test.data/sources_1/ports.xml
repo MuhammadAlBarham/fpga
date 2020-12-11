@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="pixel">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="clk" Dir="IN"/>
+		<Port Id="rotary_A_main" Dir="IN"/>
+		<Port Id="rotary_B_main" Dir="IN"/>
+		<Port Id="reset" Dir="IN"/>
+		<Port Id="vga_h_sync" Dir="OUT"/>
+		<Port Id="vga_v_sync" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

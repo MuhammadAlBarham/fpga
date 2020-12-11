@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/clock_divider.xst" -ofn "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/clock_divider.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/clock_divider.xst" -ofn "C:/Users/Phantom/Desktop/Final_Game/Mointor_test_with_Zeina/Test/clock_divider.syr" 

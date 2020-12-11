@@ -1,0 +1,24 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "pixel[2]" LOC = H14;
+NET "pixel[1]" LOC = H15;
+NET "pixel[0]" LOC = G15;
+NET "clk" LOC = C9 ;
+NET "vga_h_sync" LOC = F15;
+NET "vga_v_sync" LOC = F14;
+
+# PlanAhead Generated IO constraints 
+
+NET "reset" PULLDOWN;
+
+# PlanAhead Generated physical constraints 
+
+NET "reset" LOC = V4;
+NET "rotary_A_main" LOC = K18;
+NET "rotary_B_main" LOC = G18;
+
+# PlanAhead Generated IO constraints 
+
+NET "rotary_B_main" PULLUP;
+NET "rotary_A_main" PULLUP;

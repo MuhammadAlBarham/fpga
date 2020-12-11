@@ -1,0 +1,516 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.67 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.67 secs
+ 
+--> Reading design: monitor_color_generator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "monitor_color_generator.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "monitor_color_generator"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : monitor_color_generator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Rotary_Filter.v" in library work
+Compiling verilog file "rotary_direction.v" in library work
+Module <Rotary_Filter> compiled
+Compiling verilog file "monitor_color_generator.v" in library work
+Module <rotary_direction> compiled
+Module <monitor_color_generator> compiled
+No errors in compilation
+Analysis of file <"monitor_color_generator.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <monitor_color_generator> in library <work>.
+
+Analyzing hierarchy for module <rotary_direction> in library <work>.
+
+Analyzing hierarchy for module <Rotary_Filter> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <monitor_color_generator>.
+Module <monitor_color_generator> is correct for synthesis.
+ 
+Analyzing module <rotary_direction> in library <work>.
+Module <rotary_direction> is correct for synthesis.
+ 
+Analyzing module <Rotary_Filter> in library <work>.
+Module <Rotary_Filter> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Rotary_Filter>.
+    Related source file is "Rotary_Filter.v".
+    Found 1-bit register for signal <rotary_q1>.
+    Found 1-bit register for signal <rotary_q2>.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q1$mux0000> created at line 55.
+    Found 1-bit 4-to-1 multiplexer for signal <rotary_q2$mux0000> created at line 55.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Rotary_Filter> synthesized.
+
+
+Synthesizing Unit <rotary_direction>.
+    Related source file is "rotary_direction.v".
+    Found 1-bit register for signal <shift_left>.
+    Found 1-bit register for signal <shift_right>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <rotary_direction> synthesized.
+
+
+Synthesizing Unit <monitor_color_generator>.
+    Related source file is "monitor_color_generator.v".
+    Found 3-bit register for signal <pixel>.
+    Found 1-bit register for signal <clk_25>.
+    Found 3-bit register for signal <color>.
+    Found 3-bit subtractor for signal <color$sub0000> created at line 93.
+    Found 3-bit up counter for signal <counter_L>.
+    Found 3-bit up counter for signal <counter_R>.
+    Found 10-bit up counter for signal <CounterX>.
+    Found 10-bit up counter for signal <CounterY>.
+    Found 1-bit register for signal <inDisplayArea>.
+    Found 10-bit comparator less for signal <inDisplayArea$cmp_lt0000> created at line 202.
+    Found 10-bit comparator less for signal <inDisplayArea$cmp_lt0001> created at line 202.
+    Found 1-bit register for signal <vga_HS>.
+    Found 10-bit comparator greater for signal <vga_HS$cmp_gt0000> created at line 189.
+    Found 10-bit comparator less for signal <vga_HS$cmp_lt0000> created at line 189.
+    Found 1-bit register for signal <vga_VS>.
+    Found 10-bit comparator greater for signal <vga_VS$cmp_gt0000> created at line 190.
+    Found 10-bit comparator less for signal <vga_VS$cmp_lt0000> created at line 190.
+    Summary:
+	inferred   4 Counter(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <monitor_color_generator> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 3-bit subtractor                                      : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 3-bit up counter                                      : 2
+# Registers                                            : 10
+ 1-bit register                                        : 8
+ 3-bit register                                        : 2
+# Comparators                                          : 6
+ 10-bit comparator greater                             : 2
+ 10-bit comparator less                                : 4
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 3-bit subtractor                                      : 1
+# Counters                                             : 4
+ 10-bit up counter                                     : 2
+ 3-bit up counter                                      : 2
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+# Comparators                                          : 6
+ 10-bit comparator greater                             : 2
+ 10-bit comparator less                                : 4
+# Multiplexers                                         : 2
+ 1-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <monitor_color_generator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block monitor_color_generator, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : monitor_color_generator.ngr
+Top Level Output File Name         : monitor_color_generator
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 116
+#      GND                         : 1
+#      INV                         : 9
+#      LUT1                        : 18
+#      LUT2                        : 26
+#      LUT2_L                      : 1
+#      LUT3                        : 6
+#      LUT3_L                      : 1
+#      LUT4                        : 12
+#      LUT4_D                      : 3
+#      MUXCY                       : 18
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 40
+#      FDC                         : 20
+#      FDCE                        : 10
+#      FDCP                        : 2
+#      FDR                         : 8
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      IBUF                        : 3
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       39  out of   4656     0%  
+ Number of Slice Flip Flops:             40  out of   9312     0%  
+ Number of 4 input LUTs:                 76  out of   9312     0%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)    | Load  |
+-----------------------------------+--------------------------+-------+
+clk                                | BUFGP                    | 3     |
+clk_251                            | BUFG                     | 29    |
+encoder/test/rotary_q1             | NONE(encoder/shift_right)| 2     |
+encoder/shift_right                | NONE(counter_R_0)        | 3     |
+encoder/shift_left                 | NONE(counter_L_0)        | 3     |
+-----------------------------------+--------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+---------------------------------------------------------+-------------------------+-------+
+Control Signal                                           | Buffer(FF name)         | Load  |
+---------------------------------------------------------+-------------------------+-------+
+reset                                                    | IBUF                    | 30    |
+encoder/shift_left_and0000(encoder/shift_left_and00001:O)| NONE(encoder/shift_left)| 2     |
+encoder/shift_left_and0001(encoder/shift_left_and00011:O)| NONE(encoder/shift_left)| 2     |
+---------------------------------------------------------+-------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 5.378ns (Maximum Frequency: 185.943MHz)
+   Minimum input arrival time before clock: 3.391ns
+   Maximum output required time after clock: 5.407ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.470ns (frequency: 404.858MHz)
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               2.470ns (Levels of Logic = 1)
+  Source:            clk_25 (FF)
+  Destination:       clk_25 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: clk_25 to clk_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  clk_25 (clk_251)
+     INV:I->O              1   0.704   0.420  clk_25_not00011_INV_0 (clk_25_not0001)
+     FDC:D                     0.308          clk_25
+    ----------------------------------------
+    Total                      2.470ns (1.603ns logic, 0.867ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_251'
+  Clock period: 5.378ns (frequency: 185.943MHz)
+  Total number of paths / destination ports: 458 / 42
+-------------------------------------------------------------------------
+Delay:               5.378ns (Levels of Logic = 3)
+  Source:            CounterX_4 (FF)
+  Destination:       CounterX_0 (FF)
+  Source Clock:      clk_251 rising
+  Destination Clock: clk_251 rising
+
+  Data Path: CounterX_4 to CounterX_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.591   0.762  CounterX_4 (CounterX_4)
+     LUT4:I0->O            1   0.704   0.424  CounterXmaxed_SW0 (N22)
+     LUT4:I3->O           20   0.704   1.181  CounterXmaxed (CounterXmaxed)
+     LUT2:I1->O            1   0.704   0.000  Mcount_CounterX_eqn_01 (Mcount_CounterX_eqn_0)
+     FDC:D                     0.308          CounterX_0
+    ----------------------------------------
+    Total                      5.378ns (3.011ns logic, 2.367ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'encoder/shift_right'
+  Clock period: 2.692ns (frequency: 371.471MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               2.692ns (Levels of Logic = 1)
+  Source:            counter_R_0 (FF)
+  Destination:       counter_R_0 (FF)
+  Source Clock:      encoder/shift_right rising
+  Destination Clock: encoder/shift_right rising
+
+  Data Path: counter_R_0 to counter_R_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.591   0.669  counter_R_0 (counter_R_0)
+     INV:I->O              1   0.704   0.420  Mcount_counter_R_xor<0>11_INV_0 (Mcount_counter_R)
+     FDC:D                     0.308          counter_R_0
+    ----------------------------------------
+    Total                      2.692ns (1.603ns logic, 1.089ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'encoder/shift_left'
+  Clock period: 2.692ns (frequency: 371.471MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               2.692ns (Levels of Logic = 1)
+  Source:            counter_L_0 (FF)
+  Destination:       counter_L_0 (FF)
+  Source Clock:      encoder/shift_left rising
+  Destination Clock: encoder/shift_left rising
+
+  Data Path: counter_L_0 to counter_L_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.591   0.669  counter_L_0 (counter_L_0)
+     INV:I->O              1   0.704   0.420  Mcount_counter_L_xor<0>11_INV_0 (Mcount_counter_L)
+     FDC:D                     0.308          counter_L_0
+    ----------------------------------------
+    Total                      2.692ns (1.603ns logic, 1.089ns route)
+                                       (59.5% logic, 40.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 6 / 4
+-------------------------------------------------------------------------
+Offset:              3.391ns (Levels of Logic = 1)
+  Source:            reset (PAD)
+  Destination:       encoder/test/rotary_q1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to encoder/test/rotary_q1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            32   1.218   1.262  reset_IBUF (reset_IBUF)
+     FDR:R                     0.911          encoder/test/rotary_q1
+    ----------------------------------------
+    Total                      3.391ns (2.129ns logic, 1.262ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_251'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              5.407ns (Levels of Logic = 2)
+  Source:            vga_VS (FF)
+  Destination:       vga_v_sync (PAD)
+  Source Clock:      clk_251 rising
+
+  Data Path: vga_VS to vga_v_sync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.591   0.420  vga_VS (vga_VS)
+     INV:I->O              1   0.704   0.420  vga_v_sync1_INV_0 (vga_v_sync_OBUF)
+     OBUF:I->O                 3.272          vga_v_sync_OBUF (vga_v_sync)
+    ----------------------------------------
+    Total                      5.407ns (4.567ns logic, 0.840ns route)
+                                       (84.5% logic, 15.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 14.38 secs
+ 
+--> 
+
+Total memory usage is 4470072 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
