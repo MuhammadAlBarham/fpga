@@ -1,0 +1,381 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.64 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.64 secs
+ 
+--> Reading design: sram_model.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sram_model.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sram_model"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : sram_model
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "sram_model.v" in library work
+Module <sram_model> compiled
+No errors in compilation
+Analysis of file <"sram_model.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <sram_model> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <sram_model>.
+Module <sram_model> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <sram_model>.
+    Related source file is "sram_model.v".
+    Found 1024x8-bit single-port RAM <Mram_sram> for signal <sram>.
+    Found 8-bit tristate buffer for signal <data>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   8 Tristate(s).
+Unit <sram_model> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 1024x8-bit single-port RAM                            : 1
+# Tristates                                            : 1
+ 8-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <sram_model>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_sram> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 8-bit                   |          |
+    |     clkA           | connected to signal <we_n>          | fall     |
+    |     weA            | connected to signal <VCC>           | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to signal <data>          |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <sram_model> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 1024x8-bit single-port distributed RAM                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <sram_model> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sram_model, actual ratio is 7.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : sram_model.ngr
+Top Level Output File Name         : sram_model
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 20
+
+Cell Usage :
+# BELS                             : 293
+#      BUF                         : 8
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 128
+#      LUT4                        : 32
+#      MUXF5                       : 64
+#      MUXF6                       : 32
+#      MUXF7                       : 16
+#      MUXF8                       : 8
+# RAMS                             : 256
+#      RAM32X1S                    : 256
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 11
+#      IOBUF                       : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      341  out of   4656     7%  
+ Number of 4 input LUTs:                677  out of   9312     7%  
+    Number used as logic:               165
+    Number used as RAMs:                512
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    232     8%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+we_n                               | BUFGP                  | 256   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 5.984ns
+   Maximum output required time after clock: 9.001ns
+   Maximum combinational path delay: 12.447ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'we_n'
+  Total number of paths / destination ports: 2816 / 1792
+-------------------------------------------------------------------------
+Offset:              5.984ns (Levels of Logic = 3)
+  Source:            addr<8> (PAD)
+  Destination:       Mram_sram2 (RAM)
+  Destination Clock: we_n falling
+
+  Data Path: addr<8> to Mram_sram2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            20   1.218   1.277  addr_8_IBUF (addr_8_IBUF)
+     LUT2:I0->O            8   0.704   0.932  inst_LPM_DECODE2411 (N81)
+     LUT4:I0->O            8   0.704   0.757  inst_LPM_DECODE261 (write_ctrl26)
+     RAM32X1S:WE               0.392          Mram_sram27
+    ----------------------------------------
+    Total                      5.984ns (3.018ns logic, 2.966ns route)
+                                       (50.4% logic, 49.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'we_n'
+  Total number of paths / destination ports: 256 / 8
+-------------------------------------------------------------------------
+Offset:              9.001ns (Levels of Logic = 6)
+  Source:            Mram_sram225 (RAM)
+  Destination:       data<7> (PAD)
+  Source Clock:      we_n falling
+
+  Data Path: Mram_sram225 to data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM32X1S:WCLK->O      1   2.222   0.499  Mram_sram225 (N482)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX7_10 (inst_LPM_MUX7_10)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX7_8_f5 (inst_LPM_MUX7_8_f5)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX7_6_f6 (inst_LPM_MUX7_6_f6)
+     MUXF7:I0->O           1   0.521   0.000  inst_LPM_MUX7_4_f7 (inst_LPM_MUX7_4_f7)
+     MUXF8:I0->O           1   0.521   0.420  inst_LPM_MUX7_2_f8 (data_7_IOBUF)
+     IOBUF:I->IO               3.272          data_7_IOBUF (data<7>)
+    ----------------------------------------
+    Total                      9.001ns (8.082ns logic, 0.919ns route)
+                                       (89.8% logic, 10.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1536 / 8
+-------------------------------------------------------------------------
+Delay:               12.447ns (Levels of Logic = 9)
+  Source:            addr<0> (PAD)
+  Destination:       data<5> (PAD)
+
+  Data Path: addr<0> to data<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           346   1.218   1.361  addr_0_IBUF (addr_0_IBUF)
+     BUF:I->O            340   0.704   1.359  addr_0_IBUF_1 (addr_0_IBUF_1)
+     RAM32X1S:A0->O        1   1.025   0.499  Mram_sram1 (N34)
+     LUT3:I1->O            1   0.704   0.000  inst_LPM_MUX_10 (inst_LPM_MUX_10)
+     MUXF5:I0->O           1   0.321   0.000  inst_LPM_MUX_8_f5 (inst_LPM_MUX_8_f5)
+     MUXF6:I0->O           1   0.521   0.000  inst_LPM_MUX_6_f6 (inst_LPM_MUX_6_f6)
+     MUXF7:I0->O           1   0.521   0.000  inst_LPM_MUX_4_f7 (inst_LPM_MUX_4_f7)
+     MUXF8:I0->O           1   0.521   0.420  inst_LPM_MUX_2_f8 (data_0_IOBUF)
+     IOBUF:I->IO               3.272          data_0_IOBUF (data<0>)
+    ----------------------------------------
+    Total                     12.447ns (8.807ns logic, 3.640ns route)
+                                       (70.8% logic, 29.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.69 secs
+ 
+--> 
+
+Total memory usage is 4486456 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
