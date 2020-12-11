@@ -1,11 +1,8 @@
-# fpga: 
-
+# fpga : Field-Programmable Gate Array Architectures - FPGA
 
 These files was implemented by myself during summer semester in 2020. 
 
 ## Dscription: 
-
-**FPGA**: Field-Programmable Gate Array Architectures - FPGA
 
 The Supervisor for this course was Dr. [Musa Al-Yaman](https://scholar.google.com/citations?user=er0VK84AAAAJ&hl=en)
 
@@ -63,5 +60,5 @@ Students who work on project :
 
 Supervisor : Dr.[Musa Al-Yaman](https://scholar.google.com/citations?user=er0VK84AAAAJ&hl=en)
 
-
+**Note**: The project may has some bugs. it works on simulation, but we did't have a chance to test it on hardware kit (since we were in Covid-19 situation).
 
