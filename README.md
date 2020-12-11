@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/TRoboto/datacamp-downloader/blob/master/LICENSE)
+
 # FPGA : Field-Programmable Gate Array Architectures 
 
 This repository has files that were implemented by myself during the summer semester in 2020 at the University of Jordan.
