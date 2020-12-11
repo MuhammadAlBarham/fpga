@@ -1,6 +1,10 @@
 # FPGA : Field-Programmable Gate Array Architectures 
 
-These files was implemented by myself during summer semester in 2020. 
+This repository has files was implemented by myself during summer semester in 2020. 
+
+These files are : 
+- Assignments' Codes.
+- Final Project Files.
 
 ## Dscription: 
 
@@ -61,7 +65,7 @@ Students who work on project :
 - Saed Al-Nabelse 
 - Mohannad Atiyeh
 
-Supervisor : Dr.[Musa Al-Yaman](https://scholar.google.com/citations?user=er0VK84AAAAJ&hl=en)
+* Supervisor : Dr.[Musa Al-Yaman](https://scholar.google.com/citations?user=er0VK84AAAAJ&hl=en)
 
 **Note**: The project may has some bugs. it works on simulation, but we did't have a chance to test it on hardware kit (since we were in Covid-19 situation).
 
