@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Assignment_4/LFSR_assignment_4/lfsr_16.xst" -ofn "C:/Users/Phantom/Desktop/Assignment_4/LFSR_assignment_4/lfsr_16.syr" 
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Assignment_4/LFSR_assignment_4/lfsr_16.xst" -ofn "C:/Users/Phantom/Desktop/Assignment_4/LFSR_assignment_4/lfsr_16.syr" 
