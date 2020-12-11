@@ -1,6 +1,6 @@
 # FPGA : Field-Programmable Gate Array Architectures 
 
-This repository has files was implemented by myself during summer semester in 2020. 
+This repository has files was implemented by myself during summer semester in 2020 at the University of Jordan.
 
 These files are : 
 - Assignments' Codes.
