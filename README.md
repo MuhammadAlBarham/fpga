@@ -10,7 +10,7 @@ The Supervisor for this course was Dr. [Musa Al-Yaman](https://scholar.google.co
 * The University of Jordan
 
 
-### Assignment # 1 : 
+### [Assignment # 1](https://github.com/MuhammadAlBarham/fpga/blob/master/Solution%20in%20text%20files%20-%20Submitted%20by%20Dr.%20Musa/Assignment1_Solution.jpg) : 
 
 * Implement a counter that goes through the state sequence.
 
@@ -48,7 +48,10 @@ The Supervisor for this course was Dr. [Musa Al-Yaman](https://scholar.google.co
 
 * Implementing hvsync_generator + adding vga demo
 
-### Project :
+### [Project](https://github.com/MuhammadAlBarham/fpga/tree/master/Final%20Project):
+- [Project's Report](https://github.com/MuhammadAlBarham/fpga/blob/master/Final%20Project/Monitor_Report.pdf)
+- [Project's Presentation](https://github.com/MuhammadAlBarham/fpga/blob/master/Final%20Project/Presentation_Monitor_Project.pptx)
+- [Project's Code](https://github.com/MuhammadAlBarham/fpga/tree/master/Final%20Project/Monitor_project/Test)
 
 Students who work on project : 
 
