@@ -1,0 +1,29 @@
+Command line:
+   t_Binary_Multiplier_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  55798
+
+Tue Jul 21 18:00:34 2020
+
+
+ Elaboration Time: 0.078125 sec
+ Current Memory Usage: 4702.5 Meg
+
+ Total Signals          : 23
+ Total Nets             : 38
+ Total Signal Drivers   : 13
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 22
+ Total Traceable Variables  : 39
+ Total Scalar Nets and Variables : 233
+
+ Total Simulation Time: 0.1875 sec
+
+ Current Memory Usage: 4702.51 Meg
+
+Tue Jul 21 18:06:30 2020
+
+
+

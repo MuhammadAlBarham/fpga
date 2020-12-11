@@ -1,0 +1,374 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.26 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> Reading design: next_GCD.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "next_GCD.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "next_GCD"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : next_GCD
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "new_GCD.v" in library work
+Module <next_GCD> compiled
+No errors in compilation
+Analysis of file <"next_GCD.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <next_GCD> in library <work> with parameters.
+	S_Comp = "01"
+	S_Done = "10"
+	S_idle = "00"
+	width = "00000000000000000000000000000101"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <next_GCD>.
+	S_Comp = 2'b01
+	S_Done = 2'b10
+	S_idle = 2'b00
+	width = 32'sb00000000000000000000000000000101
+Module <next_GCD> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <Equal> in unit <next_GCD> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <Done> in unit <next_GCD> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <Greater> in unit <next_GCD> has a constant value of 1 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <next_GCD>.
+    Related source file is "new_GCD.v".
+    Using one-hot encoding for signal <state>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <state> of Case statement line 92 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 32-bit subtractor for signal <B$addsub0000> created at line 148.
+    Found 32-bit subtractor for signal <old_A_3$sub0000> created at line 142.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+Unit <next_GCD> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit subtractor                                     : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<12>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<18>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<24>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<30>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<3>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<9>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<15>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<21>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<27>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<5>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<11>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<17>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<23>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<29>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<2>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<8>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<14>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<20>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<26>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<31>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<4>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<10>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<16>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<22>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<28>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<1>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: Load_regs.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<7>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<13>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<19>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<25>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<3>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<9>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<15>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<21>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<27>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<0>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<6>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<12>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<18>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<24>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<30>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<2>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<8>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<14>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<20>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<26>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<31>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<5>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<11>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<17>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<23>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<29>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<1>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<7>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<13>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<19>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<25>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<4>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<10>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<16>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<22>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: B<28>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<0>.
+WARNING:Xst:2170 - Unit next_GCD : the following signal(s) form a combinatorial loop: A<6>.
+
+Optimizing unit <next_GCD> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block next_GCD, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : next_GCD.ngr
+Top Level Output File Name         : next_GCD
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 76
+
+Cell Usage :
+# BELS                             : 66
+#      LUT1                        : 1
+#      LUT2                        : 54
+#      LUT3                        : 10
+#      VCC                         : 1
+# IO Buffers                       : 75
+#      IBUF                        : 10
+#      OBUF                        : 65
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       37  out of   4656     0%  
+ Number of 4 input LUTs:                 65  out of   9312     0%  
+ Number of IOs:                          76
+ Number of bonded IOBs:                  75  out of    232    32%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 6.096ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Delay:               6.096ns (Levels of Logic = 3)
+  Source:            X<4> (PAD)
+  Destination:       A<4> (PAD)
+
+  Data Path: X<4> to A<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.455  X_4_IBUF (X_4_IBUF)
+     LUT3:I2->O            2   0.704   0.447  _old_A_1<4>1 (A_4_OBUF)
+     OBUF:I->O                 3.272          A_4_OBUF (A<4>)
+    ----------------------------------------
+    Total                      6.096ns (5.194ns logic, 0.902ns route)
+                                       (85.2% logic, 14.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.95 secs
+ 
+--> 
+
+Total memory usage is 4467896 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   65 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

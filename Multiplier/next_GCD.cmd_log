@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Phantom/Desktop/Ch_5/Multiplier/next_GCD.xst" -ofn "C:/Users/Phantom/Desktop/Ch_5/Multiplier/next_GCD.syr" 

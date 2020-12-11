@@ -1,0 +1,419 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: Multiplier_Binary.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Multiplier_Binary.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Multiplier_Binary"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : Multiplier_Binary
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "Multiplier.v" in library work
+Module <Multiplier_Binary> compiled
+No errors in compilation
+Analysis of file <"Multiplier_Binary.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Multiplier_Binary> in library <work> with parameters.
+	BC_size = "00000000000000000000000000000011"
+	S_add = "010"
+	S_idle = "001"
+	S_shift = "100"
+	dp_width = "00000000000000000000000000000101"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Multiplier_Binary>.
+	BC_size = 32'sb00000000000000000000000000000011
+	S_add = 3'b010
+	S_idle = 3'b001
+	S_shift = 3'b100
+	dp_width = 32'sb00000000000000000000000000000101
+Module <Multiplier_Binary> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Multiplier_Binary>.
+    Related source file is "Multiplier.v".
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clock                     (rising_edge)        |
+    | Reset              | reset_b                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit register for signal <A>.
+    Found 5-bit adder carry out for signal <AUX_1$addsub0000>.
+    Found 5-bit register for signal <B>.
+    Found 1-bit register for signal <C>.
+    Found 3-bit down counter for signal <P>.
+    Found 5-bit register for signal <Q>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <Multiplier_Binary> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder carry out                                 : 1
+# Counters                                             : 1
+ 3-bit down counter                                    : 1
+# Registers                                            : 4
+ 1-bit register                                        : 1
+ 5-bit register                                        : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 00
+ 010   | 01
+ 100   | 10
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 1
+ 5-bit adder carry out                                 : 1
+# Counters                                             : 1
+ 3-bit down counter                                    : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Multiplier_Binary> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Multiplier_Binary, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 21
+ Flip-Flops                                            : 21
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Multiplier_Binary.ngr
+Top Level Output File Name         : Multiplier_Binary
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 24
+
+Cell Usage :
+# BELS                             : 37
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 9
+#      LUT3                        : 7
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 6
+#      MUXCY                       : 5
+#      XORCY                       : 5
+# FlipFlops/Latches                : 21
+#      FDC                         : 2
+#      FDE                         : 16
+#      FDRE                        : 1
+#      FDSE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 12
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       16  out of   4656     0%  
+ Number of Slice Flip Flops:             21  out of   9312     0%  
+ Number of 4 input LUTs:                 26  out of   9312     0%  
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    232    10%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 21    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------+------------------------+-------+
+Control Signal                                         | Buffer(FF name)        | Load  |
+-------------------------------------------------------+------------------------+-------+
+state_FSM_Acst_FSM_inv(state_FSM_Acst_FSM_inv1_INV_0:O)| NONE(state_FSM_FFd1)   | 2     |
+-------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 4.786ns (Maximum Frequency: 208.943MHz)
+   Minimum input arrival time before clock: 2.729ns
+   Maximum output required time after clock: 6.483ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 4.786ns (frequency: 208.943MHz)
+  Total number of paths / destination ports: 152 / 38
+-------------------------------------------------------------------------
+Delay:               4.786ns (Levels of Logic = 7)
+  Source:            A_0 (FF)
+  Destination:       A_4 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: A_0 to A_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.591   0.610  A_0 (A_0)
+     LUT2:I1->O            1   0.704   0.000  Madd_AUX_1_addsub0000_lut<0> (Madd_AUX_1_addsub0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Madd_AUX_1_addsub0000_cy<0> (Madd_AUX_1_addsub0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_AUX_1_addsub0000_cy<1> (Madd_AUX_1_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_AUX_1_addsub0000_cy<2> (Madd_AUX_1_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Madd_AUX_1_addsub0000_cy<3> (Madd_AUX_1_addsub0000_cy<3>)
+     XORCY:CI->O           1   0.804   0.424  Madd_AUX_1_addsub0000_xor<4> (AUX_1_addsub0000<4>)
+     LUT4:I3->O            1   0.704   0.000  A_mux0000<9>1 (A_mux0000<9>)
+     FDE:D                     0.308          A_4
+    ----------------------------------------
+    Total                      4.786ns (3.752ns logic, 1.034ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              2.729ns (Levels of Logic = 2)
+  Source:            Multiplier<0> (PAD)
+  Destination:       Q_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: Multiplier<0> to Q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.499  Multiplier_0_IBUF (Multiplier_0_IBUF)
+     LUT3:I1->O            1   0.704   0.000  Q_mux0000<0>1 (Q_mux0000<0>)
+     FDE:D                     0.308          Q_0
+    ----------------------------------------
+    Total                      2.729ns (2.230ns logic, 0.499ns route)
+                                       (81.7% logic, 18.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 12 / 11
+-------------------------------------------------------------------------
+Offset:              6.483ns (Levels of Logic = 2)
+  Source:            state_FSM_FFd1 (FF)
+  Destination:       Ready (PAD)
+  Source Clock:      clock rising
+
+  Data Path: state_FSM_FFd1 to Ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             15   0.591   1.096  state_FSM_FFd1 (state_FSM_FFd1)
+     LUT2:I1->O            9   0.704   0.820  state_FSM_FFd2-In21 (P_and0000)
+     OBUF:I->O                 3.272          Ready_OBUF (Ready)
+    ----------------------------------------
+    Total                      6.483ns (4.567ns logic, 1.916ns route)
+                                       (70.4% logic, 29.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.94 secs
+ 
+--> 
+
+Total memory usage is 4469432 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
