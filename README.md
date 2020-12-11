@@ -1,4 +1,4 @@
-# fpga : Field-Programmable Gate Array Architectures - FPGA
+# FPGA : Field-Programmable Gate Array Architectures 
 
 These files was implemented by myself during summer semester in 2020. 
 
